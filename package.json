@@ -1,0 +1,57 @@
+{
+  "name": "slack_icon_carrier",
+  "version": "1.0.0",
+  "author": "Prokop Simek <prokopsimek@gmail.com>",
+  "bin": {
+    "sicarrier": "./bin/run"
+  },
+  "bugs": "https://github.com/prokopsimek/slackiconcarrier/issues",
+  "dependencies": {
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^2",
+    "tslib": "^1"
+  },
+  "devDependencies": {
+    "@types/node": "^10",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "jest": "^24.8.0",
+    "prettier": "^1.18.2",
+    "rimraf": "^2.6.3",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib"
+  ],
+  "homepage": "https://github.com/prokopsimek/slackiconcarrier",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "oclif": {
+    "bin": "sicarrier"
+  },
+  "repository": "prokopsimek/slackiconcarrier",
+  "scripts": {
+    "build": "rimraf lib && tsc -b",
+    "build:watch": "yarn build -w",
+    "lint": "eslint 'src/**/*.ts'",
+    "lint:fix": "yarn lint --fix",
+    "prepack": "yarn build",
+    "start": "./bin/run",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "validate": "yarn install && yarn build && yarn lint && yarn test"
+  }
+}
